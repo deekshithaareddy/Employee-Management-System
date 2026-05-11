@@ -1,0 +1,13 @@
+# create employee
+POST http://localhost:3000/employee-api/employees
+Content-Type: application/json
+
+{
+    "name":"ravi",
+    "email":"ravi@mail.com",
+    "mobile":"7387833648",
+    "designation":"HR",
+    "companyName":"TCS"
+}
+
+
