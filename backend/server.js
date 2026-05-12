@@ -2,6 +2,8 @@ import exp from 'express'
 import{ connect } from 'mongoose'
 import cors from "cors"
 import {employeeApp} from './EmployeeAPI.js'
+import dotenv from "dotenv";
+dotenv.config();
 // create express app
 const app=exp()
 // add cors middleware
@@ -21,10 +23,11 @@ app.use("/employee-api",employeeApp)
 
 const connectDB=async()=>{
     try{
-        await connect("mongodb://localhost:27017/empdb")
+        await connect(process.env.DB_URL);
         console.log("DB server connected")
+        const PORT = process.env.PORT || 3000;
         // assign port
-        app.listen(3000,()=>console.log(`Server listening on 3000..`))
+        app.listen(PORT,()=>console.log(`Server listening on ${PORT}...`))
     }catch(err){
         console.log("error in db connection",err.message)
     }
