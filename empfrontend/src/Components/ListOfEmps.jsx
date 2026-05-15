@@ -20,13 +20,13 @@ function ListOfEmps() {
 
 
       const deleteEmpByID = async (id) => {
-    let res = await axios.delete(`http://localhost:3000/employee-api/employees/${id}`)
+    let res = await axios.delete(`https://employee-management-system-nzjc.onrender.com/${id}`)
     if(res.status===200){
         getEmps();
     }
   }
     async function getEmps() {
-      let res = await fetch("http://localhost:3000/employee-api/employees");
+      let res = await fetch("https://employee-management-system-nzjc.onrender.com");
       if (res.status === 200) {
         let resObj = await res.json();
         setEmps(resObj.payload);
