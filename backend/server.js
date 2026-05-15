@@ -12,7 +12,8 @@ app.use(
     origin: [
       "http://localhost:5173",
       "http://localhost:5174",
-      "http://localhost:5176"
+      "http://localhost:5176",
+      "https://employee-management-system-nk2awn9pf.vercel.app"
     ]
   })
 );
